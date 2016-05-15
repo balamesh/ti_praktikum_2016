@@ -117,5 +117,20 @@ export GAZEBO_WORLD_PATH=\
  1~/gazebo-rcll/worlds/carologistics/llsf.world
 \end{lstlisting}
 
+\subsection{YAGI}
+YAGI's website \texttt{http://yagi.ist.tugraz.at/} provides access to the release of YAGI including the agent for the LLSF2014.\\
+As we are in need of an agent for the LLSF2015 we continued development of the agent to handle the communication used by the Refbox in 2015.\\
+The installation can be done in the following way:
+\begin{lstlisting}[frame=single]
+$ sudo dnf install antlr3-C-devel
+$ git clone git@github.com:balamesh/yagi.git
+$ cd yagi
+$ git checkout nlimpert/llsf2015
+$ mkdir build
+$ cd build
+$ cmake ..
+$ make -j4
+\end{lstlisting}
+
 \end{document}
 
