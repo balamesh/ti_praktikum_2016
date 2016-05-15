@@ -46,5 +46,39 @@ $ sudo dnf install compat-lua compat-lua-devel\
  compat-tolua++ compat-tolua++-devel
 \end{lstlisting}
 
+\subsection{ROS (optional)}
+For debugging reasons it is recommended to make use of the visualization functionalities of the Robot Operating System called Rviz.\\
+To make use of Rviz we have to install the full ROS (the currently used version is "Jade").\\
+In order to install ROS (see \texttt{http://wiki.ros.org/jade/Installation/Source}) we want to do the following;
+\begin{lstlisting}[frame=single]
+$ sudo mkdir /opt/ros/catkin_ws_jade
+$ sudo mkdir /opt/ros/jade
+$ sudo chown <yourusername>:<yourusername> /opt/ros/*
+$ cd /opt/ros/catkin_ws_jade
+
+$ rosinstall_generator desktop_full --rosdistro\
+ jade --deps --wet-only\
+ --tar > jade-desktop-full-wet.rosinstall
+$ wstool init -j8 src jade-desktop-full-wet.rosinstall
+
+$ rosinstall_generator navigation --rosdistro\
+ jade --deps --wet-only\
+ --tar > jade-navigation.rosinstall
+$ rosinstall_generator ar_track_alvar --rosdistro\
+ jade --deps --wet-only\
+ --tar > jade-ar_track_alvar.rosinstall
+$ wstool merge -t src jade-navigation.rosinstall
+$ wstool merge -t src jade-ar_track_alvar.rosinstall
+$ wstool update -t src
+\end{lstlisting}
+Where <yourusername> is the username that was given during the installation process of Fedora.\\
+Next, build the whole workspace (this can take some minutes):
+
+\begin{lstlisting}[frame=single]
+$ cd /opt/ros/catkin_ws_jade
+$ ./src/catkin/bin/catkin_make_isolated --install\
+ --install-space=/opt/ros/jade -DCMAKE_BUILD_TYPE=Release
+\end{lstlisting}
+
 \end{document}
 
