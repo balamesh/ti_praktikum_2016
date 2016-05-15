@@ -207,5 +207,16 @@ To do this perform the following steps:
         \item run \texttt{./yagi -b FawkesBackend -f \textasciitilde/yagi/domains/llsf2015/llsf2015.y} (in case the agent you'd like to launch is located at\\ \texttt{\textasciitilde/yagi/domains/llsf2015/llsf2015.y})
 \end{enumerate}
 
+\subsubsection{Launch Skillgui (Optional)}
+In order to monitor the executed behaviour by the state machine one can make use of the Skillgui provided by the Fawkes Robotics Framework.
+After compilation of \texttt{fawkes-robotino} one can launch the skillgui by executing \texttt{fawkes-robotino/bin/skillgui}.\\
+In the skillgui (shown in figure \ref{skillgui}) you have to click the top left button in order to be able to connect to the particular robot. In our case it is the entry \texttt{"Fawkes on Gazsim Robotino 1"}. Afterwards click the \texttt{FSM}-Header in order to view the state machine.
+\begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{images/skillgui.png}
+        \caption{Skillgui}
+        \label{skillgui}
+\end{figure}
+
 \end{document}
 
