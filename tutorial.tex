@@ -180,5 +180,23 @@ An example of the refbox starting screen is shown in Figure \ref{refboxui}.
 \end{figure}
 The other window is the Gazebo simulation environment, shown in figure \ref{gazebostart}.
 
+\subsection{Launching the simulation}
+In order to start the game we have to tell the refbox that we first would like to announce the desired team. Do the following:
+\begin{enumerate}
+        \item Switch to the window shown in figure \ref{refboxui}
+        \item Press F4
+        \item Press "Return" twice
+\end{enumerate}
+This sets the team CYAN to "Carologistics".\\
+\\
+Change the phase from \texttt{PRE\_GAME} to \texttt{SETUP} by pressing \texttt{F3} and afterwards set the game state from \texttt{WAIT\_START} to \texttt{RUNNING} by pressing the \texttt{SPACE}-Key.\\
+\textbf{Important:} After changing from the phase \texttt{PRE\_GAME} to \texttt{SETUP} the gazebo-plugin spawns the MPSes. This usually takes a while so be patient until you see all 12 MPSes spawned. A fully launched simulation looks like shown in figure \ref{simulaunchfull}.
+\begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{images/simulaunchfull.png}
+        \caption{Exemplary launched simulation including Refbox-UI and Gazebo with spawned MPSes}
+        \label{simulaunchfull}
+\end{figure}
+
 \end{document}
 
