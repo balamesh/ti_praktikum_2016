@@ -146,5 +146,39 @@ $ make -j4
 You need to copy the files \texttt{explore\_zone\_wrapped.lua} and \texttt{init.lua} to \\\texttt{fawkes-robotino/src/lua/skills/robotino/}.
 \newpage
 
+\section{Usage}
+\subsection{Starting the simulation}
+In order to start the whole simulation including the ROS Environment, the Gazebo simulation software, the LLSF-Refbox and an instance of one Fawkes in order to control the first robot in the simulation do the following;
+\begin{lstlisting}[frame=single]
+$ cd fawkes-robotino/bin
+$ ./gazsim.bash -x start -r -n 1
+\end{lstlisting}
+There should be 2 windows opening. One of them is a set of terminals including the following:
+\begin{enumerate}
+        \item \texttt{gazebo including the world-plugin}
+        \item \texttt{roscore}
+        \item \texttt{refbox-shell}
+        \item \texttt{refbox-user-interface}
+        \item \texttt{fawkes}
+        \item \texttt{fawkes-comm}
+\end{enumerate}
+
+\begin{figure}
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/refbox_ui.png}
+        \caption{Starting screen of the LLSF-Refbox in the simulation}
+        \label{refboxui}
+\end{figure}
+
+An example of the refbox starting screen is shown in Figure \ref{refboxui}.
+\newpage
+\begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{images/gazebo_start.png}
+        \caption{Refbox user-interface}
+        \label{gazebostart}
+\end{figure}
+The other window is the Gazebo simulation environment, shown in figure \ref{gazebostart}.
+
 \end{document}
 
