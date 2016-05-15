@@ -99,5 +99,23 @@ $ cd llsf-refbox
 $ make -j4
 \end{lstlisting}
 
+\subsection{Environmental variables}
+In order to promote the LLSF-Refbox installation directory, the Gazebo models and plugins path and so on we have to modify the file \texttt{~/.bashrc}. Insert the following contents at the bottom of this file:
+\begin{lstlisting}[frame=single]
+source /usr/share/gazebo/setup.bash
+source /opt/ros/jade/setup.bash
+export FAWKES_DIR=~/fawkes-robotino
+export GAZEBO_RCLL=~/gazebo-rcll
+export GAZEBO_PLUGIN_PATH=$GAZEBO_PLUGIN_PATH:\
+ $GAZEBO_RCLL/plugins/lib/gazebo
+export GAZEBO_MODEL_PATH=$GAZEBO_RCLL/models
+export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:\
+ $GAZEBO_RCLL/models/carologistics
+
+export LLSF_REFBOX_DIR=~/llsf-refbox
+export GAZEBO_WORLD_PATH=\
+ 1~/gazebo-rcll/worlds/carologistics/llsf.world
+\end{lstlisting}
+
 \end{document}
 
