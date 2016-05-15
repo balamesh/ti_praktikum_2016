@@ -32,5 +32,19 @@ Most of this section is gathered from the official documentation at the Fawkes R
         \item \texttt{https://trac.fawkesrobotics.org/wiki/FawkesOnFedora}
         \item \texttt{https://trac.fawkesrobotics.org/wiki/Carologistics/Gazsim-Setup-2015}
 \end{itemize}
+\subsection{Fawkes Dependencies}
+It is preferred to make use of Fedora 23 as the time of this writing. Fawkes is mainly developed against Fedora and using Fedora 23 eases up the installation process due to readily available dependencies solved by Fedora's repositories.\\
+Although you can of course feel free to have a look at the aforementioned website in order to install it on any other Unix-based operating system.\\
+We will consider the installation in Fedora 23 in this tutorial.\\
+\\
+After a fresh installation of Fedora perform the following\\(refer to ) in order to install the dependencies required to build Fawkes:
+\begin{lstlisting}[frame=single]
+$ sudo dnf groupinstall development-tools development-libs
+$ sudo dnf install fawkes-devenv
+$ sudo rpm -e --nodeps tolua++ tolua++-devel
+$ sudo dnf install compat-lua compat-lua-devel\
+ compat-tolua++ compat-tolua++-devel
+\end{lstlisting}
+
 \end{document}
 
