@@ -132,5 +132,19 @@ $ cmake ..
 $ make -j4
 \end{lstlisting}
 
+\subsection{Fawkes Robotino}
+The aforementioned Fawkes Robotics Software-stack is provided by the team Carologistics in a tarball\footnote{https://www.fawkesrobotics.org/blog/2016/02/22/rcll2015-release/}.\\
+In order to get / install this Software-stack perform the following:
+\begin{lstlisting}[frame=single]
+$ wget\
+ https://files.fawkesrobotics.org/releases/fawkes-robotino-2015.tar.bz2
+$ tar -xjf fawkes-robotino-2015.tar.bz2
+$ cd fawkes-robotino
+$ make -j4
+\end{lstlisting}
+\textbf{Important:} After installation make sure you insert the additional skill \texttt{explore\_zone\_wrapped} required to call exploration goals out of YAGI. This skill and the required \texttt{init.lua} is found in the repository \texttt{https://github.com/balamesh/ti\_praktikum\_2016}.\\
+You need to copy the files \texttt{explore\_zone\_wrapped.lua} and \texttt{init.lua} to \\\texttt{fawkes-robotino/src/lua/skills/robotino/}.
+\newpage
+
 \end{document}
 
