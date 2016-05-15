@@ -80,5 +80,14 @@ $ ./src/catkin/bin/catkin_make_isolated --install\
  --install-space=/opt/ros/jade -DCMAKE_BUILD_TYPE=Release
 \end{lstlisting}
 
+\subsection{Gazebo Models and Plugins}
+There are custom models and plugins used by the simulation software Gazebo. E.g. 
+\begin{lstlisting}[frame=single]
+$ cd ~
+$ git clone git@github.com:robocup-logistics/gazebo-rcll.git
+$ cd gazebo-rcll/plugins
+$ make -j4
+\end{lstlisting}
+
 \end{document}
 
